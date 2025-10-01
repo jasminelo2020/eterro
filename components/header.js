@@ -124,20 +124,90 @@ class Header extends HTMLElement {
                 right: 0px;
                 padding: 0;
             }
+
+            .hamburger-menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: none;
+            }
+
+            /* Mobile Screens */
+            @media only screen and (max-width: 768px) {
+                header {
+                    text-align: left;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    display: flex;
+                }
+
+                h1 {
+
+                }
+
+                nav {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                nav ul {
+                    display: none; 
+                }
+
+                nav ul li {
+                    margin: 10px 0;
+                }
+
+                #capsule-items, #store-items {
+                    width: 100%;
+                    text-align: left;
+                }
+
+                /* Show the menu when active */
+                .nav-left.responsive {position: relative;}
+                .nav-left.responsive a.hamburger-menu {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+                .nav-left.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: left;
+                }
+
+                .hamburger-menu {
+                    // flex: 1;
+                    // justify-content: flex-start;
+                    display: flex;
+                    cursor: pointer;
+                    font-size: 20px;
+                    margin-left: 10px; /* Align hamburger icon to the left */
+                }
+
+                // .hamburger {
+                //     display: flex;
+                // }
+            }
         </style>
         <header>
-            <nav class="nav-left">
-                <li id="capsule-items"><a href="capsule-3.html">capsule</a>
-                    <ul id="dropdown-items">
-                        <li><a href="capsule-3.html">capsule 3</a></li>
-                        <li><a href="capsule-2.html">capsule 2</a></li>
-                        <li><a href="capsule-1.html">capsule 1</a></li>
-                    </ul>
-                </li>
+            <div class="hamburger-menu" id="icon" onclick="toggleMenu()">&#9776;</div>
+            <nav class="nav-left" id="topnav">
+                <ul id="menu-items">
+                    <li id="capsule-items"><a href="capsule-3.html">capsule</a>
+                        <ul id="dropdown-items">
+                            <li><a href="capsule-3.html">capsule 3</a></li>
+                            <li><a href="capsule-2.html">capsule 2</a></li>
+                            <li><a href="capsule-1.html">capsule 1</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </nav>
             <h1 class="title"><a href="index.html">ETERRO</a></h1>
-            <nav class="nav-right">
-                <ul>
+            <nav class="nav-right" id="topnav">
+                <ul id="menu-items">
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="account.html">ACCOUNT</a></li>
                     <li id="store-items"><a href="store.html">STORE</a>
@@ -151,6 +221,8 @@ class Header extends HTMLElement {
                 </ul>
             </nav>
         </header>
+        <script>
+        </script>
       `;
     }
   }
