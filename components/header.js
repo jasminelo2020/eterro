@@ -160,6 +160,12 @@ class Header extends HTMLElement {
                     margin: 10px 0;
                 }
 
+                /* reveal nav on header hover for small screens (minimal change) */
+                header:hover nav ul {
+                    display: flex;
+                    flex-direction: column;
+                }
+
                 #capsule-items, #store-items {
                     width: 100%;
                     text-align: left;
